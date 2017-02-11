@@ -17,6 +17,17 @@ A literal object.
  
  "My dog `name` is `age` year old likes to `speak`."
  */ 
+var dog = {
+  name: "bonnie",
+  age: 4,
+  vegeterian: true,
+  color: ["blue","gold"],
+  speak: function (){
+    return "woof";
+  }
+};
+console.log("My dog ",dog.name,"is",dog.age,"year old likes to",dog.speak);
+
 
 
 /*
@@ -31,8 +42,16 @@ An empty object
             
   Console.log the object.
 */
+ var kicks ={};
+ kicks.brand = "Puma";
+ kicks.color = "red";
+ kicks.size = 10.5;
+ kicks.buy = function (){
+  return "hell yea!"
+}
 
-
+console.log(kicks);
+console.log(kicks.buy());
 /* 
    Declare a variable named `plainBox` and set its value to be an EMPTY object.
    Next, you will add three properties to this object. 
@@ -40,7 +59,12 @@ An empty object
             - add a property named `size` and set it to a number value between `0` and `20`.
             - add a property named `contents` and set it to be an empty array.
 */
+var plainBox ={};
+plainBox.color="blue";
+plainBox.size=15;
+plainBox.contents=[];
 
+console.log(plainBox);
 
 /*
    Declare a variable named `stockCar` and create the following properties (key-value pairs) to the object:
@@ -50,6 +74,15 @@ An empty object
             - add a key named `driver` and set it to be `null`.
             - add a key named `passengers` and set it to be an empty array.
 */
+var stockCar = {
+  model: "Ford",
+  year: 2015,
+  automaticTransmission: true,
+  driver: null,
+  passengers: []
+};
+
+console.log(stockCar);
 
 
 /*
