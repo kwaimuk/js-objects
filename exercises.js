@@ -47,7 +47,7 @@ An empty object
  kicks.color = "red";
  kicks.size = 10.5;
  kicks.buy = function (){
-  return "hell yea!"
+  return "hell yea!";
 }
 
 console.log(kicks);
@@ -100,7 +100,20 @@ console.log(stockCar);
    the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just 
    the value at `name`, and just the value at `age`.
  */
+var plainPerson={};
+var completePerson = "";
+function buildPerson(person,nameString,age){
+  person.name = nameString;
+  person.age = age;
 
+  return person;
+
+}
+buildPerson(plainPerson,"Jimmi",19); 
+completePerson=plainPerson;
+console.log(completePerson);
+console.log(plainPerson.name);
+console.log(plainPerson.age);
 
 /*
    Display values of objects that are inside an array
