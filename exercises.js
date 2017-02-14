@@ -101,7 +101,7 @@ console.log(stockCar);
    the value at `name`, and just the value at `age`.
  */
 var plainPerson={};
-var completePerson = "";
+
 function buildPerson(person,nameString,age){
   person.name = nameString;
   person.age = age;
@@ -109,11 +109,11 @@ function buildPerson(person,nameString,age){
   return person;
 
 }
-buildPerson(plainPerson,"Jimmi",19); 
-completePerson=plainPerson;
+
+var completePerson=buildPerson(plainPerson,"Jimmi",19);
 console.log(completePerson);
-console.log(plainPerson.name);
-console.log(plainPerson.age);
+console.log(completePerson.name);
+console.log(completePerson.age);
 
 /*
    Display values of objects that are inside an array
@@ -224,7 +224,8 @@ function objectionAddition(object){
   object.result = object.a + object.b;
   return object;
 }
-console.log(objectionAddition(sumObj));
+var sumObjResult = objectionAddition(sumObj);
+console.log("sumObjResult",sumObjResult);
 /*
    Print sum function and add as new key-value
    Declare a new function named printObj and a single parameter which will be the object from the challenge just above. 
@@ -241,13 +242,15 @@ console.log(objectionAddition(sumObj));
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or 
         **create more** objects and invoke your function multiple times.
  */
- var output ="";
+
 function printObj(object){
-  output=object.a+"+"+object.b+"="+object.result;
-  return output;
+  object.output=object.a+"+"+object.b+"="+object.result;
+ return object;
 }
 printObj(sumObj);
-console.log(output);
+console.log("here",sumObj.output);
+console.log(printObj(sumObj));
+
 var extra ={
   a: 5,
   b:6,
@@ -263,20 +266,40 @@ console.log(printObj(objectionAddition(extra)));
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named 
         plainBoxResult and use `console.log` to inspect your results.
  */
+/*var mathc = []
+for (var i=0; i <10;i++){
+  mathc[i]=Math.floor((Math.random() * 10) + 1);
+
+}
+console.log(mathc);
+
 function putInPlainBox(obj){
   for (i=0;i<obj.length;i++){
     obj[i].contents+=obj[i].contents;
+    console.log("notice",obj);
     return obj;
   }
   obj.plainBoxResult = obj;
   return obj.plainBoxResult;
 }
 var plainBox =  {
-  contents: [1,2,3],
+  contents: [1,2,3,4,5,6,7,8,9,10],
   plainBoxResult: undefined
 };
 putInPlainBox(plainBox);
-console.log(plainBox.plainBoxResult);
+console.log(plainBox.plainBoxResult);*/
+function putInPlainBox(obj){
+  obj.contents= [];
+  for(var i=0;i<10;i++){
+  obj.contents[i] = Math.floor(Math.random()*10);
+  //obj.contents.push(Math.floor(Math.random()*10));
+  }
+return obj;
+}
+// var putInPlainBoxResult = putInPlainBox(plainBox);
+putInPlainBox(plainBox);
+console.log(plainBox);
+
 /*
    Detecting transmission
         Declare a function named detectingTransmission and a single parameter which will be an object. Within this function 
@@ -334,7 +357,21 @@ console.log(stockCar);
         You will have to populate the `passengers` array on the **car** object with proper objects that represent a person. Currently you have two arrays, one which contains names and another which contains ages.
 
         You should iterate through the names and ages, pass the values to your `buildPerson` function to build person objects (remember that this function returns a new object). Don't forget that this function actually takes **three** arguments, how will you handle that? (you should not have to change your function).
+**/
+var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+var passengerAges= [19, 12, 21, 22, 16, 9, 19, 20, 15];
+var car = {};
+function addPassengerAges (car, names, ages){
+  for (var i=0;i<names.length;i++){
+   car =  names[i]+" is "+ages[i];
 
+  }
+  return car;
+  console.log(car);
+}
+addPassengerAges(car,passengerList,passengerAges);
+console.log(car);
+/*
     Example of a loaded Car:
 
     # Display passengers
